@@ -1,0 +1,6 @@
+psa:
+  core_semantic_model: 0.1.0
+  semantic_package_spec: 0.1.0
+  semantic_registry_spec: 0.1.0
+  runtime_contract: 0.1.0
+  agent_contract: 0.1.0

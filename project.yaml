@@ -1,0 +1,23 @@
+schema_version: 0.1.0
+project:
+  id: easg-runtime
+  name: Enterprise Analytics Semantic Graph Runtime
+  category: runtime-provider
+  psa_role: Semantic Execution Engine
+  maturity:
+    level: 3
+  consumes:
+    - PSA Core Semantic Model v0.1.0
+    - PSA Semantic Package Specification v0.1.0
+    - PSA Runtime Contract v0.1.0
+  provides:
+    - Runtime Execution Contract implementation
+    - Semantic Query Capability
+    - Semantic Context Management
+  status: active
+  repository:
+    owner: psa-ecosystem
+    name: easg
+    url: https://github.com/psa-ecosystem/easg
+  contacts:
+    governance: PSA Governance
