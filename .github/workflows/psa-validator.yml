@@ -1,0 +1,35 @@
+name: PSA Validator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pyyaml pytest
+
+      - name: Run PSA validator self-check on baseline
+        run: |
+          ./tools/psa-validator self-check --baseline ./docs/governance/PSA-Engineering-Baseline-v0.1.md
+
+      - name: Run PSA validator compliance check
+        run: |
+          ./tools/psa-validator check .
+
+      - name: Run bootstrap tests
+        run: |
+          python3 -m pytest -q
