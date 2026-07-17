@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-BASELINE = Path("/Users/nexlume/codex/projects/PSA/docs/governance/PSA-Engineering-Baseline-v0.1.md")
+BASELINE = REPO_ROOT / "docs" / "governance" / "PSA-Engineering-Baseline-v0.1.md"
 
 
 def test_validator_runs():
